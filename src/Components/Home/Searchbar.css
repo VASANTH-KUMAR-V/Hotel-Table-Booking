@@ -1,0 +1,35 @@
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 8px 12px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+  
+  .search-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .search-icon, .filter-icon {
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+  }
+  
+  .search-icon {
+    margin-right: 8px;
+  }
+  
+  .filter-icon {
+    margin-left: 8px;
+  }
+  
