@@ -27,12 +27,7 @@ const BottomNav = () => {
         <span>Order</span>
       </NavLink>
 
-      <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="menu" element={<Menu />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="order" element={<Order />} />
-      </Routes>
+
     </div>
   );
 };

@@ -52,7 +52,6 @@ const Menu = () => {
           </div>
         ))}
       </div>
-      <NavBar />
     </div>
   );
 };
