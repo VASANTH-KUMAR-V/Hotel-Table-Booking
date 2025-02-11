@@ -1,4 +1,5 @@
 import Home from "./Components/Home/Home";
+import Navbar from "./Components/Navbar/Navbar.jsx";
 
 
 
@@ -6,8 +7,10 @@ import Home from "./Components/Home/Home";
 
 function App() {
   return (
-
+<div>
     <Home />
+    <Navbar />
+</div>
 
   );
 }
