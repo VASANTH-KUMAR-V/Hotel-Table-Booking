@@ -4,22 +4,10 @@ import "./Home.css";
 import NavBar from "../Navbar/Navbar"
 import SearchBar from "../Home/SearchBar";
 
-// Import images
-import Burger from "../../Assets/Image/Chappathi.jpg";
-import SmashBurger from "../../Assets/Image/poori.jpg";
-import Beverage from "../../Assets/Image/Noodles.jpeg";
 import HeroImage from "../../Assets/Image/Hero.jpg";
-
-
-const menuItems = [
-  { name: "Burgers", image: Burger },
-  { name: "Smash Burgers", image: SmashBurger },
-  { name: "Beverages", image: Beverage },
-];
 
 const Menu = () => {
   return (
-
     <div className="menu-container">
       <SearchBar />
       {/* Address */}
@@ -42,16 +30,6 @@ const Menu = () => {
       <p className="menu-description">
         Choose from a diverse menu with a delicious variety of dishes.
       </p>
-
-      {/* Menu Items */}
-      <div className="menu-items">
-        {menuItems.map((item) => (
-          <div key={item.name} className="menu-item">
-            <img src={item.image} alt={item.name} className="menu-item-image" />
-            <p className="menu-item-name">{item.name}</p>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
