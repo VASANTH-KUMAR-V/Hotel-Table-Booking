@@ -1,33 +1,30 @@
 import React from "react";
-import { NavLink, Routes, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { HomeOutlined, ShoppingCartOutlined, UserOutlined, ShopOutlined } from "@ant-design/icons";
-import './Navbar.css'
-import Home from "../Home/Home"
-import Menu from "../Menu/Menu";
-import Cart from "../Cart/Cart";
-import Order from "../Order/Order";
+import "./Navbar.css";
 
 const BottomNav = () => {
   return (
     <div className="bottom-nav">
-      <NavLink to="/" activeClassName="active">
+      <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
         <HomeOutlined />
         <span>Home</span>
       </NavLink>
-      <NavLink to="menu" activeClassName="active">
+      
+      <NavLink to="/menu" className={({ isActive }) => (isActive ? "active" : "")}>
         <ShopOutlined />
         <span>Menu</span>
       </NavLink>
-      <NavLink to="cart" activeClassName="active">
+      
+      <NavLink to="/cart" className={({ isActive }) => (isActive ? "active" : "")}>
         <ShoppingCartOutlined />
         <span>Cart</span>
       </NavLink>
-      <NavLink to="order" activeClassName="active">
+      
+      <NavLink to="/order" className={({ isActive }) => (isActive ? "active" : "")}>
         <UserOutlined />
         <span>Order</span>
       </NavLink>
-
-
     </div>
   );
 };

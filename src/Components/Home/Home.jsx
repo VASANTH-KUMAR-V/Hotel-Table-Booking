@@ -1,8 +1,8 @@
 import React from "react";
 import { EnvironmentOutlined } from "@ant-design/icons";
 import "./Home.css";
-import NavBar from "../Navbar/Navbar"
 import SearchBar from "../Home/SearchBar";
+import { NavLink } from "react-router-dom";
 
 import HeroImage from "../../Assets/Image/Hero.jpg";
 
@@ -21,7 +21,11 @@ const Menu = () => {
         <img src={HeroImage} alt="Delicious Food" className="hero-image" />
         <div className="hero-overlay">
           <h2>Order your favorite food here</h2>
-          <button className="menu-button">View Menu</button>
+          <button className="menu-button">
+            <NavLink to="/menu">
+              <span>View Menu</span>
+            </NavLink>
+          </button>
         </div>
       </div>
 

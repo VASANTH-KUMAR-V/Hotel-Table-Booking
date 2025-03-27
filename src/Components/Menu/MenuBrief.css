@@ -1,96 +1,130 @@
-/* Modal Content */
-.menu-brief-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
-
-.menu-brief-image {
+/* Overlay background */
+.menu-brief-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 250px;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-/* Price & Description */
-.menu-brief-price {
-  font-size: 18px;
-  font-weight: 500;
-  color: #333;
-}
-
-.menu-brief-price-value {
-  font-size: 20px;
-  font-weight: bold;
-  color: #2d87f0;
-}
-
-.menu-brief-description {
-  font-size: 14px;
-  color: #666;
-  margin-top: 10px;
-}
-
-/* Observations Input */
-.menu-brief-observations-title {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 15px;
-}
-
-.menu-brief-observations-input {
-  width: 100%;
-  border-radius: 5px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  margin-top: 5px;
-}
-
-/* Quantity Selector */
-.menu-brief-quantity-container {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
-  gap: 15px;
-  font-size: 18px;
+  z-index: 1000;
 }
 
-.menu-brief-quantity-icon {
-  font-size: 24px;
-  cursor: pointer;
-  color: #2d87f0;
-  transition: transform 0.2s ease;
+/* Modal container */
+.menu-brief-modal {
+  background: #fff;
+  width: 350px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
 }
 
-.menu-brief-quantity-icon:hover {
-  transform: scale(1.2);
-}
-
-.menu-brief-quantity {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.menu-brief-total-price {
-  font-size: 18px;
-  font-weight: bold;
-  color: #28a745;
-}
-
-/* Add to Cart Button */
-.menu-brief-add-to-cart-button {
-  margin-top: 20px;
-  background: #2d87f0;
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  background: none;
   border: none;
-  font-size: 16px;
-  padding: 10px;
+  cursor: pointer;
+}
+
+/* Product image */
+.menu-brief-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.menu-brief-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Description */
+.menu-brief-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Observations label */
+.menu-brief-label {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+/* Observations input */
+.menu-brief-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Quantity selector */
+.menu-brief-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Quantity buttons */
+.quantity-button {
+  background: #81C408;
+  color: white;
+  border: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  cursor: pointer;
   border-radius: 5px;
 }
 
-.menu-brief-add-to-cart-button:hover {
-  background: #1d6edb;
+.quantity-button:hover {
+  background: #FFB524;
+}
+
+/* Quantity value */
+.quantity-value {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+/* Price display */
+.menu-brief-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Add to cart button */
+.add-to-cart-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background: #81C408;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-to-cart-button:hover {
+  background: #FFB524;
 }

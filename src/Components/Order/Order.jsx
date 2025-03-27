@@ -1,12 +1,31 @@
-import React from 'react'
+import { useContext } from "react";
+import { CartContext } from "../../CartContext";
+import "./Order.css";
 
 const Order = () => {
-  return (
-    <div>
-        <h1>Order</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ratione praesentium suscipit velit nam. Beatae quae pariatur quaerat labore delectus adipisci consectetur, qui ad. Maiores deleniti omnis nobis veniam nisi!</p>
-    </div>
-  )
-}
+  const { orderSummary } = useContext(CartContext); // ✅ Correct variable name
 
-export default Order
+  return (
+    <div className="order-summary-container">
+      <h2 className="order-summary-title">Order Summary</h2>
+      {orderSummary && orderSummary.length > 0 ? (
+        <ul className="order-list">
+          {orderSummary.map((item, index) => (
+            <li key={index} className="order-item">
+              <img src={item.image} alt={item.name} className="order-item-image" />
+              <div className="order-item-info">
+                <h3 className="order-item-name">{item.name}</h3>
+                <p className="order-item-quantity">Quantity: {item.quantity}</p>
+                <p className="order-item-price">₹ {item.totalPrice}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="no-orders">No orders placed.</p>
+      )}
+    </div>
+  );
+};
+
+export default Order;
