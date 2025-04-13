@@ -9,6 +9,11 @@ const MenuBrief = ({ isOpen, item, onClose }) => {
 
   if (!isOpen || !item) return null; // Don't render if modal is closed
 
+  // Helper function to calculate total price based on quantity
+  const calculateTotal = () => {
+    return item.price * quantity;
+  };
+
   const handleQuantityChange = (value) => {
     setQuantity((prevQuantity) => {
       const newQuantity = prevQuantity + value;
@@ -21,7 +26,7 @@ const MenuBrief = ({ isOpen, item, onClose }) => {
       ...item,
       quantity,
       observations,
-      totalPrice: item.price * quantity,
+      totalPrice: calculateTotal(),
     };
 
     addToCart(cartItem); // Add item to cart
@@ -64,7 +69,7 @@ const MenuBrief = ({ isOpen, item, onClose }) => {
         </div>
 
         {/* Price Calculation */}
-        <p className="menu-brief-price">Total: ₹ {item.price * quantity}</p>
+        <p className="menu-brief-price">Total: ₹ {calculateTotal()}</p>
 
         {/* Add to Cart Button */}
         <button className="add-to-cart-button" onClick={handleAddToCart}>

@@ -1,58 +1,116 @@
+/* General container */
 .order-summary-container {
-    padding: 20px;
-    text-align: center;
-    background: #f8f8f8;
-  }
-  
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.order-summary-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Table styling */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.order-table th,
+.order-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.order-table th {
+  background-color: #81C408;
+  color: white;
+}
+
+.order-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Totals section */
+.order-totals {
+  text-align: right;
+  max-width: 300px;
+  margin-left: auto;
+  font-size: 18px;
+  color: #333;
+}
+
+.order-totals p {
+  margin: 8px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+/* Empty state */
+.no-orders {
+  text-align: center;
+  font-size: 20px;
+  color: #777;
+  margin-top: 50px;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
   .order-summary-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 26px;
   }
-  
-  .order-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .order-item {
-    display: flex;
-    align-items: center;
-    background: white;
+
+  .order-table th,
+  .order-table td {
+    font-size: 14px;
     padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 10px;
   }
-  
-  .order-item-image {
+
+  .order-image {
     width: 60px;
     height: 60px;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-right: 15px;
   }
-  
-  .order-item-info {
-    flex: 1;
-    text-align: left;
-  }
-  
-  .order-item-name {
+
+  .order-totals {
     font-size: 16px;
-    font-weight: bold;
-    color: #333;
+    text-align: center;
+    margin: 0 auto;
   }
-  
-  .order-item-quantity,
-  .order-item-price {
+}
+
+@media (max-width: 480px) {
+  .order-summary-container {
+    padding: 10px;
+  }
+
+  .order-summary-title {
+    font-size: 22px;
+  }
+
+  .order-table th,
+  .order-table td {
+    font-size: 13px;
+  }
+
+  .order-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .order-totals {
     font-size: 14px;
-    color: #777;
   }
-  
-  .no-orders {
-    font-size: 16px;
-    color: red;
-  }
-  
+}

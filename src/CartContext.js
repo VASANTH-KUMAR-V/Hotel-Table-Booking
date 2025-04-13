@@ -23,17 +23,61 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  const increaseQuantity = (itemId) => {
+    setCart((prevCart) =>
+      prevCart.map((item) =>
+        item.id === itemId
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+              totalPrice: (item.quantity + 1) * item.price,
+            }
+          : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (itemId) => {
+    setCart((prevCart) =>
+      prevCart
+        .map((item) =>
+          item.id === itemId
+            ? {
+                ...item,
+                quantity: item.quantity - 1,
+                totalPrice: (item.quantity - 1) * item.price,
+              }
+            : item
+        )
+        .filter((item) => item.quantity > 0)
+    );
+  };
+
+  const removeFromCart = (itemId) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== itemId));
+  };
+
   const placeOrder = () => {
     if (cart.length === 0) {
       alert("Cart is empty. Add items before placing an order.");
       return;
     }
-    setOrderSummary(cart); // ✅ Save cart items as order
-    setCart([]); // ✅ Clear the cart after placing order
+    setOrderSummary(cart);
+    setCart([]);
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, placeOrder, orderSummary }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        increaseQuantity,
+        decreaseQuantity,
+        removeFromCart,
+        placeOrder,
+        orderSummary,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

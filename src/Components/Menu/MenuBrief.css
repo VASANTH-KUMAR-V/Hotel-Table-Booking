@@ -16,6 +16,7 @@
 .menu-brief-modal {
   background: #fff;
   width: 350px;
+  max-width: 90%;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -34,10 +35,11 @@
   cursor: pointer;
 }
 
-/* Product image */
+/* Product image with standard size */
 .menu-brief-image {
   width: 100%;
-  height: auto;
+  height: 200px; /* Standard fixed height */
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
 }
@@ -127,4 +129,32 @@
 
 .add-to-cart-button:hover {
   background: #FFB524;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .menu-brief-modal {
+    width: 90%;
+    padding: 15px;
+  }
+  
+  .menu-brief-title {
+    font-size: 16px;
+  }
+  
+  .menu-brief-description,
+  .menu-brief-label,
+  .menu-brief-input,
+  .menu-brief-price {
+    font-size: 14px;
+  }
+  
+  .quantity-button {
+    font-size: 16px;
+    padding: 5px 8px;
+  }
+  
+  .quantity-value {
+    font-size: 14px;
+  }
 }
